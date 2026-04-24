@@ -1,7 +1,7 @@
 let squareArea = document.querySelector("#squarearea");
 // let squareArea = document.getElementById("#squarearea");
 let squareCount = parseInt(Math.random()*21)+30; //30-50
-//Make some variable for a really big zindex
+
 for(let i = 0; i < squareCount; i++){
     addSquare(); //adds a square for every i in squareCount
 }
@@ -34,8 +34,21 @@ function addSquare(){
     square.style.left = parseInt(Math.random()*650)+"px";
     square.style.top = parseInt(Math.random()*250)+"px";
     square.style.backgroundColor = getRandomColor();
+    //brings square to front or deletes it based on z-index
+    square.onclick = clickSquare;
     //put it on the screen
     squareArea.append(square);
+}
+
+//brings square to front or removes if at top
+let zind = 1000;
+function clickSquare(){
+    if(this.style.zIndex < zind){
+        zind++;
+        this.style.zIndex = zind;
+    }else{
+        squareArea.removeChild(this);
+    }
 }
 
 //changes color of all existing squares
