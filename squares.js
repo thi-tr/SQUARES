@@ -31,8 +31,14 @@ function addSquare(){
     //make a square
     let square = document.createElement("div");
     square.className = "square";
-    square.style.left = parseInt(Math.random()*650)+"px";
-    square.style.top = parseInt(Math.random()*250)+"px";
+    //square.style.left = parseInt(Math.random()*650)+"px";
+    //square.style.top = parseInt(Math.random()*250)+"px";
+    //randomize size and apply to squareArea
+    let size = parseInt(Math.random()*31)+45 //45-75
+    square.style.height = size+"px";
+    square.style.width = size+"px";
+    square.style.left = parseInt(Math.random()*(700-size))+"px";
+    square.style.top = parseInt(Math.random()*(300-size))+"px";
     square.style.backgroundColor = getRandomColor();
     //brings square to front or deletes it based on z-index
     square.onclick = clickSquare;
