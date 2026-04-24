@@ -17,6 +17,15 @@ function getRandomColor(){
     return color;
 }
 
+//window onload for addSquare and changeColors functions
+window.onload = function(){
+    var addSq = document.getElementById("addSquare");
+    var changeCo = document.getElementById("changeColors");
+
+    addSq.onclick = addSquare;
+    changeCo.onclick = changeColors;
+}
+
 //adds a square when 'Add Square' button is clicked
 function addSquare(){
     //make a square
