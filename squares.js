@@ -29,11 +29,11 @@ function addSquare(){
     squareArea.append(square);
 }
 
-//Make a funciton that changes all the colors of all the squares
-//make sure the button calls it
+//changes color of all existing squares
 function changeColors(){
-    //make an array
     let allSquares = document.querySelectorAll(".square");
-    //for of loop or just dp a regular fpr loop with index
-    //Change the color
+    //loop through each square and randomize the color
+    for(let square of allSquares){
+        square.style.backgroundColor = getRandomColor();
+    }
 }
